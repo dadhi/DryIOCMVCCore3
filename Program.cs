@@ -1,9 +1,10 @@
-using DryIoc;
 using DryIoc.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using DryIoc;
+using DryIOC;
 
-namespace DryIOC
+namespace DryIoc_AspNetCore3_Example
 {
     public class Program
     {
@@ -18,11 +19,10 @@ namespace DryIOC
                 {
                     webBuilder.UseStartup<Startup>();
                 })
-                .UseServiceProviderFactory(new DryIocServiceProviderFactory())            
+                .UseServiceProviderFactory(new DryIocServiceProviderFactory())
                 .ConfigureContainer<Container>((hostContext, container) =>
                 {
                     container.Register<IHello, Hello>(Reuse.Transient);
-                })
-            ;
+                });
     }
 }

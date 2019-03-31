@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DryIOC.Models;
 
-namespace DryIOC.Controllers
+namespace DryIoc_AspNetCore3_Example.Controllers
 {
     public class HomeController : Controller
     {
